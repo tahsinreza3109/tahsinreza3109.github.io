@@ -1,0 +1,72 @@
+name: Deploy site to GitHub Pages
+
+# Runs on every push to main, and can be triggered by hand from the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half way.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed so we can ask git which CV was uploaded most recently
+
+      - name: Use the latest CV from cv/
+        run: |
+          set -euo pipefail
+
+          # Pick the PDF in cv/ that was committed most recently. If git history
+          # gives nothing usable, fall back to the only PDF sitting in the folder.
+          latest=""
+          while read -r f; do
+            [ -n "$f" ] || continue
+            if [ -f "$f" ]; then latest="$f"; break; fi
+          done < <(git log --name-only --pretty=format: -- 'cv/*.pdf' | grep -E '^cv/.+\.pdf$' || true)
+
+          if [ -z "$latest" ]; then
+            count=$(find cv -maxdepth 1 -name '*.pdf' 2>/dev/null | wc -l)
+            if [ "$count" -eq 1 ]; then
+              latest=$(find cv -maxdepth 1 -name '*.pdf')
+            fi
+          fi
+
+          if [ -n "$latest" ]; then
+            echo "Publishing CV from: $latest"
+            mkdir -p assets/cv
+            cp "$latest" assets/cv/Tahsin_Reza_CV.pdf
+          else
+            echo "No PDF found in cv/ - keeping the CV already in assets/cv/"
+          fi
+
+      - name: Remove files that should not be published
+        run: rm -rf cv .github
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
