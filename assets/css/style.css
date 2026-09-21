@@ -299,16 +299,40 @@ section:last-of-type{ border-bottom: none; }
   flex-wrap: wrap;
   gap: 12px;
 }
+/* ---------- Hero portrait ----------
+   The photo is masked into a soft arch; two arcs of the same form sit
+   behind it and sweep out to the left, one thick, one a thin accent line. */
 .hero-photo{
+  --portrait: 48% 48% 48% 48% / 36% 36% 36% 36%;
+  position: relative;
   width: 230px;
   height: 300px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow);
+}
+.hero-photo::before,
+.hero-photo::after{
+  content: "";
+  position: absolute;
+  border-radius: var(--portrait);
+  pointer-events: none;
+}
+.hero-photo::before{            /* thick arc, offset down and left */
+  inset: 34px 28px -30px -34px;
+  border: 12px solid var(--border-strong);
+}
+.hero-photo::after{             /* thin accent line */
+  inset: -16px 14px -24px -32px;
+  border: 1.5px solid var(--accent);
+  opacity: .38;
+}
+.hero-photo img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--portrait);
   background: var(--bg-inset);
 }
-.hero-photo img{ width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -804,9 +828,11 @@ section:last-of-type{ border-bottom: none; }
   }
   .hero-photo{
     order: -1;
-    width: 128px;
-    height: 166px;
+    width: 148px;
+    height: 192px;
   }
+  .hero-photo::before{ inset: 16px 18px -16px -18px; border-width: 7px; }
+  .hero-photo::after{ inset: -12px; }
   .hero h1{ font-size: 32px; }
   .hero-ghost{ font-size: 84px; top: 30px; }
   .hero-line{ font-size: 17px; }
