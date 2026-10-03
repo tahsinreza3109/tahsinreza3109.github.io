@@ -347,7 +347,8 @@ strong{ font-weight: 600; color: var(--text); }
 .subwork-meta{
   margin: 0 0 12px;
   font-size: 13px;
-  color: var(--text-faint);
+  font-weight: 600;
+  color: var(--accent);
 }
 .subwork .cp-link{ display: inline-block; margin-top: 14px; }
 
