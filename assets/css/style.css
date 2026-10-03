@@ -328,12 +328,7 @@ strong{ font-weight: 600; color: var(--text); }
   margin: 26px 0 4px;
 }
 .subwork{
-  margin-top: 14px;
-  padding: 18px 22px 20px;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
-  background: var(--bg-elevated);
+  margin: 18px 0 0 40px;
 }
 .subwork-top{
   display: flex;
@@ -785,7 +780,7 @@ strong{ font-weight: 600; color: var(--text); }
     grid-template-columns: 1fr;
     gap: 6px;
   }
-  .subwork{ padding: 16px 16px 18px; }
+  .subwork{ margin-left: 18px; }
   .subwork-top{ flex-direction: column-reverse; gap: 8px; }
 
 }
