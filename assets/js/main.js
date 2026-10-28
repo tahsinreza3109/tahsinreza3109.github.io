@@ -78,8 +78,8 @@
       var sec = document.getElementById(id);
       if (sec) spy.observe(sec);
     });
-    // sections without a nav link (hero, route map) clear the highlight
-    ['hero', 'map'].forEach(function (id) {
+    // the hero has no nav link, so it clears the highlight
+    ['hero'].forEach(function (id) {
       var sec = document.getElementById(id);
       if (sec) spy.observe(sec);
     });
