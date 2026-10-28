@@ -209,39 +209,6 @@ section{ padding:96px 0; border-bottom:1px solid var(--line); scroll-margin-top:
 .js-anim .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
 .js-anim .reveal.is-visible{ opacity:1; transform:none; }
 
-/* ---------- Route map ---------- */
-.rm{ display:flex; flex-wrap:wrap; gap:40px; align-items:stretch; }
-.rm-lines{ flex:999 1 660px; min-width:0; display:flex; flex-direction:column; gap:48px; }
-.rm-line{ --c:var(--blue); display:grid; grid-template-columns:210px 1fr; gap:14px 28px; align-items:start; }
-.rm-line.t{ --c:var(--blue); } .rm-line.b{ --c:var(--teal); } .rm-line.p{ --c:var(--amber); }
-.rm-name{ display:flex; align-items:center; gap:12px; font-weight:600; font-size:15.5px; line-height:1.3; }
-.rm-badge{ width:32px; height:32px; border-radius:50%; background:var(--c); color:#fff; display:grid; place-items:center; font-family:var(--font-mono); font-size:13px; font-weight:500; flex:0 0 auto; }
-.rm-line.p .rm-badge{ color:#1A1206; }
-.rm-stations{ position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-.rm-track{ position:absolute; left:0; right:-24px; top:12px; height:6px; border-radius:3px; background:var(--c); transform-origin:left center; transition:transform 1.5s cubic-bezier(.65,0,.35,1) .2s; }
-.rm-st{ position:relative; display:block; padding-top:0; }
-.rm-dot{
-  position:relative; display:block; width:30px; height:30px; border-radius:50%;
-  border:6px solid var(--c); background:var(--bg); margin-bottom:12px;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1), background-color .2s ease;
-  transition-delay:calc(var(--i,0) * .38s + .25s), 0s;
-}
-.rm-st:hover .rm-dot{ transform:scale(1.25); background:var(--c); transition-delay:0s; }
-.rm-title{ display:block; font-weight:600; font-size:14.5px; line-height:1.35; }
-.rm-st:hover .rm-title{ text-decoration:underline; text-underline-offset:3px; }
-.rm-sub{ display:block; margin-top:2px; font-family:var(--font-mono); font-size:12px; color:var(--faint); }
-.rm-text{ transition:opacity .6s ease, transform .6s ease; transition-delay:calc(var(--i,0) * .38s + .45s); }
-.js-anim .rm-line.reveal:not(.is-visible) .rm-track{ transform:scaleX(0); }
-.js-anim .rm-line.reveal:not(.is-visible) .rm-dot{ transform:scale(0); }
-.js-anim .rm-line.reveal:not(.is-visible) .rm-text{ opacity:0; transform:translateY(10px); }
-.rm-terminal{
-  flex:1 1 220px; display:flex; flex-direction:column; justify-content:center; gap:14px; padding:30px;
-  border-radius:22px; background:var(--ink); color:var(--bg);
-}
-.rm-terminal .ring{ width:48px; height:48px; border-radius:50%; border:9px solid var(--bg); background:var(--ink); }
-.rm-terminal .lbl{ font-size:12px; opacity:.8; }
-.rm-terminal .txt{ font-family:var(--font-display); font-size:26px; line-height:1.2; }
-
 /* ---------- About ---------- */
 .about-grid{ display:flex; flex-wrap:wrap; gap:28px 72px; }
 .about-grid .section-head{ flex:1 1 260px; align-self:flex-start; margin:0; }
@@ -446,12 +413,6 @@ section{ padding:96px 0; border-bottom:1px solid var(--line); scroll-margin-top:
   .hero-photo::after{ inset:-12px 12px -18px -24px; }
   .hero-grid{ gap:36px; }
   .hero-facts{ margin-top:48px; grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .rm-line{ grid-template-columns:1fr; gap:18px; }
-  .rm-stations{ grid-template-columns:1fr; gap:22px; padding-left:46px; }
-  .rm-track{ left:9px; right:auto; top:6px; bottom:6px; width:6px; height:auto; transform-origin:top center; }
-  .js-anim .rm-line.reveal:not(.is-visible) .rm-track{ transform:scaleY(0); }
-  .rm-dot{ position:absolute; left:-46px; top:2px; margin:0; width:24px; height:24px; border-width:5px; }
-  .rm-dot{ left:-46px; margin-left:0; }
   .stats{ gap:10px; }
   .papers{ grid-template-columns:1fr; }
   .tl-meta{ flex-basis:100%; }
@@ -460,7 +421,6 @@ section{ padding:96px 0; border-bottom:1px solid var(--line); scroll-margin-top:
   .lb-prev{ left:8px; } .lb-next{ right:8px; } .lb-close{ top:10px; right:10px; }
 }
 @media (max-width:560px){
-  .rm-terminal .txt{ font-size:22px; }
   .aw-y{ flex-basis:78px; }
 }
 
