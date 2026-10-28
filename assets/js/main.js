@@ -1,5 +1,5 @@
 // Theme toggle, mobile nav, scroll progress, active-section nav, scroll reveals,
-// count-up stats, project filters and the figure lightbox.
+// count-up stats, project filters, the figure lightbox and pointer feedback.
 (function () {
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -203,6 +203,33 @@
   } else {
     // no <dialog> support: the project images just stay as plain pictures
     document.querySelectorAll('.pmedia').forEach(function (b) { b.style.cursor = 'default'; });
+  }
+
+  /* ---------- Pointer feedback (mouse and trackpad only) ---------- */
+  if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    // a soft spotlight follows the cursor across cards
+    document.addEventListener('mousemove', function (e) {
+      var card = e.target.closest ? e.target.closest('.card, .pcard') : null;
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+
+    // the outline behind the portrait drifts a few pixels against the cursor
+    var hero = document.getElementById('hero');
+    var photo = document.querySelector('.hero-photo');
+    if (hero && photo) {
+      hero.addEventListener('mousemove', function (e) {
+        var r = hero.getBoundingClientRect();
+        photo.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+        photo.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+      }, { passive: true });
+      hero.addEventListener('mouseleave', function () {
+        photo.style.setProperty('--px', 0);
+        photo.style.setProperty('--py', 0);
+      });
+    }
   }
 
   /* ---------- Footer year ---------- */
