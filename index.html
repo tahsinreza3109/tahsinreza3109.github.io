@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
@@ -27,18 +27,17 @@
 </head>
 <body>
 
-<div class="route-progress" aria-hidden="true"><span id="route-progress"></span></div>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
 
 <header class="site-header">
   <nav class="nav" aria-label="Main">
-    <a href="#top" class="nav-name">Tahsin <span>Reza</span></a>
+    <a href="#top" class="brand">Tahsin Reza</a>
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#interests">Interests</a></li>
       <li><a href="#experience">Research</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#professional-experience">Professional</a></li>
+      <li><a href="#professional-experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#awards">Awards</a></li>
@@ -60,50 +59,44 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="hero">
-    <svg class="hero-routes" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <path pathLength="1" d="M -60 668 C 260 668 440 668 640 706 S 1000 736 1500 726" stroke="#5B8FDB"/>
-      <path pathLength="1" d="M -60 708 C 300 708 560 708 760 722 S 1100 744 1500 706" stroke="#3BA898"/>
-      <path pathLength="1" d="M -60 746 C 340 746 640 746 860 740 S 1160 724 1500 690" stroke="#E0A458"/>
-    </svg>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Transportation Planning Research</p>
-          <h1><span class="w"><span>Tahsin</span></span> <span class="w it"><span>Reza</span></span></h1>
+          <p class="hero-label"><span class="dot" style="--d:var(--accent)"></span>Transportation Planning Research</p>
+          <h1><span class="w"><span>Tahsin</span></span> <span class="w"><span>Reza</span></span></h1>
+
           <div class="hero-contact" id="contact">
-            <ul class="contact-list">
-              <li><a href="mailto:tahsinreza3109@gmail.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>tahsinreza3109@gmail.com</a></li>
-              <li><a href="mailto:2015029@urp.buet.ac.bd"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>2015029@urp.buet.ac.bd</a></li>
+            <ul class="mail-list">
+              <li><a href="mailto:tahsinreza3109@gmail.com">tahsinreza3109@gmail.com</a></li>
+              <li><a href="mailto:2015029@urp.buet.ac.bd">2015029@urp.buet.ac.bd</a></li>
             </ul>
-            <div class="hero-actions">
-              <a class="btn" href="https://www.linkedin.com/in/tahsin-reza-3109at/" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.75v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 2.05.85 2.05 2.3v3.7" stroke-linecap="round" stroke-linejoin="round"/></svg>LinkedIn</a>
-              <a class="btn" href="https://github.com/tahsinreza3109" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.53c.48.09.65-.2.65-.46v-1.8c-2.63.57-3.18-1.13-3.18-1.13-.43-1.1-1.05-1.4-1.05-1.4-.86-.58.07-.57.07-.57.95.07 1.45.98 1.45.98.85 1.45 2.22 1.03 2.76.79.09-.62.34-1.03.61-1.27-2.1-.24-4.3-1.05-4.3-4.67 0-1.03.37-1.87.97-2.53-.1-.24-.42-1.2.1-2.5 0 0 .8-.25 2.6.97a9 9 0 0 1 4.74 0c1.8-1.22 2.6-.97 2.6-.97.52 1.3.2 2.26.1 2.5.6.66.97 1.5.97 2.53 0 3.63-2.2 4.42-4.31 4.66.35.3.65.87.65 1.76v2.6c0 .27.17.55.66.46A9.5 9.5 0 0 0 12 2.5Z" stroke-linejoin="round"/></svg>GitHub</a>
-              <a class="btn" href="https://orcid.org/0009-0006-0889-3589" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.3"/><circle cx="9" cy="9.2" r=".55" fill="currentColor" stroke="none"/><path d="M9 11.6v5.4M12.3 11.6v5.4M12.3 11.6c1.9 0 3.05 1 3.05 2.7s-1.15 2.7-3.05 2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>ORCID</a>
+            <div class="icon-row">
+              <a class="icon-btn" href="https://www.linkedin.com/in/tahsin-reza-3109at/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.75v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.2 0 2.05.85 2.05 2.3v3.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="icon-btn" href="https://github.com/tahsinreza3109" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.53c.48.09.65-.2.65-.46v-1.8c-2.63.57-3.18-1.13-3.18-1.13-.43-1.1-1.05-1.4-1.05-1.4-.86-.58.07-.57.07-.57.95.07 1.45.98 1.45.98.85 1.45 2.22 1.03 2.76.79.09-.62.34-1.03.61-1.27-2.1-.24-4.3-1.05-4.3-4.67 0-1.03.37-1.87.97-2.53-.1-.24-.42-1.2.1-2.5 0 0 .8-.25 2.6.97a9 9 0 0 1 4.74 0c1.8-1.22 2.6-.97 2.6-.97.52 1.3.2 2.26.1 2.5.6.66.97 1.5.97 2.53 0 3.63-2.2 4.42-4.31 4.66.35.3.65.87.65 1.76v2.6c0 .27.17.55.66.46A9.5 9.5 0 0 0 12 2.5Z" stroke-linejoin="round"/></svg></a>
+              <a class="icon-btn" href="https://orcid.org/0009-0006-0889-3589" target="_blank" rel="noopener" aria-label="ORCID"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9.3"/><circle cx="9" cy="9.2" r=".55" fill="currentColor" stroke="none"/><path d="M9 11.6v5.4M12.3 11.6v5.4M12.3 11.6c1.9 0 3.05 1 3.05 2.7s-1.15 2.7-3.05 2.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </div>
+
+          <dl class="facts">
+            <div><dt>Education</dt><dd>BURP, BUET · Graduated June 2026</dd></div>
+            <div><dt>CGPA</dt><dd>3.70 / 4.00</dd></div>
+            <div><dt>Research</dt><dd>Transportation Planning &amp; Data Science</dd></div>
+            <div><dt>Based in</dt><dd>Dhaka, Bangladesh</dd></div>
+          </dl>
         </div>
+
         <div class="hero-photo">
           <img src="assets/img/profile-hero.jpg" alt="Portrait of Tahsin Reza" width="690" height="900">
         </div>
       </div>
-
-      <ul class="hero-facts">
-        <li><span class="fact-k">BURP, BUET</span><span class="fact-v">Graduated June 2026</span></li>
-        <li><span class="fact-k">CGPA</span><span class="fact-v">3.70 / 4.00</span></li>
-        <li><span class="fact-k">Research</span><span class="fact-v">Transportation Planning &amp; Data Science</span></li>
-        <li><span class="fact-k">Based in</span><span class="fact-v">Dhaka, Bangladesh</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
+  <!-- ================= ABOUT + INTERESTS ================= -->
   <section aria-label="About" id="about">
     <div class="wrap">
       <div class="about-grid">
-        <div class="section-head reveal">
-          <span class="section-num">01</span>
-          <h2 class="section-title">About</h2>
-        </div>
+        <h2 class="sec-title reveal">About</h2>
         <div class="about-body reveal">
           <p>
             My work explores how people make travel decisions and how those decisions interact with safety in
@@ -119,32 +112,26 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ================= RESEARCH INTERESTS ================= -->
-  <section aria-label="Research Interests" id="interests">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">02</span>
-        <h2 class="section-title">Research Interests</h2>
-      </div>
-      <div class="interest-grid">
-        <div class="interest-card reveal">
-          <h3>Travel Behavior &amp; Mode Choice</h3>
-          <p>How people decide to travel, and why those decisions differ across households, incomes and geographical locations.</p>
-        </div>
-        <div class="interest-card c2 reveal">
-          <h3>Transport Policy &amp; Emerging Modes</h3>
-          <p>How informal and emerging modes enter a transport system, and how policy can respond to them fairly.</p>
-        </div>
-        <div class="interest-card c3 reveal">
-          <h3>Data-Driven Transport Planning</h3>
-          <p><strong>Statistical modeling</strong> and <strong>interpretable machine learning</strong> applied to mobility data.</p>
-        </div>
-        <div class="interest-card c4 reveal">
-          <h3>Accessibility, Safety &amp; Equity</h3>
-          <p>Who a transport system actually serves, who it leaves out, and how that gap can be measured and closed.</p>
+      <div class="interests" id="interests">
+        <p class="sec-label reveal">Research interests</p>
+        <div class="int-grid">
+          <div class="int reveal">
+            <h3>Travel Behavior &amp; Mode Choice</h3>
+            <p>How people decide to travel, and why those decisions differ across households, incomes and geographical locations.</p>
+          </div>
+          <div class="int reveal">
+            <h3>Transport Policy &amp; Emerging Modes</h3>
+            <p>How informal and emerging modes enter a transport system, and how policy can respond to them fairly.</p>
+          </div>
+          <div class="int reveal">
+            <h3>Data-Driven Transport Planning</h3>
+            <p><strong>Statistical modeling</strong> and <strong>interpretable machine learning</strong> applied to mobility data.</p>
+          </div>
+          <div class="int reveal">
+            <h3>Accessibility, Safety &amp; Equity</h3>
+            <p>Who a transport system actually serves, who it leaves out, and how that gap can be measured and closed.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -153,21 +140,18 @@
   <!-- ================= RESEARCH EXPERIENCE ================= -->
   <section aria-label="Research Experience" id="experience">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">03</span>
-        <h2 class="section-title">Research Experience</h2>
-      </div>
+      <h2 class="sec-title reveal">Research Experience</h2>
 
-      <article class="rcard reveal">
-        <span class="rtag blue">Bachelor's thesis · 2025 – 2026</span>
+      <article class="thesis reveal">
+        <span class="dotlabel" style="--d:var(--blue)"><span class="dot"></span>Bachelor's thesis · 2025 – 2026</span>
         <h3>Flow Characteristics of Traditional Rickshaws and Battery-Operated Three-Wheelers in Non-Lane-Based Heterogeneous Traffic of Dhaka</h3>
-        <p class="rorg">Department of Urban and Regional Planning, BUET · Supervisor: Dr. Md. Musleh Uddin Hasan · with Dr. Md Asif Raihan (Accident Research Institute, BUET)</p>
-        <div class="rcols">
+        <p class="org">Department of Urban and Regional Planning, BUET · Supervisor: Dr. Md. Musleh Uddin Hasan · with Dr. Md Asif Raihan (Accident Research Institute, BUET)</p>
+        <div class="cols">
           <div>
             <p>Battery-operated three-wheelers now share Dhaka's roads with pedal rickshaws in large numbers, but traffic models, and the policy horizon built on them, still treat the two as a single class. The thesis asks whether that assumption holds, and what follows for how the modes should be regulated.</p>
             <p>Videographic surveys were manually extracted into vehicle-pair observations and modeled with <strong>tree-based explainable machine learning</strong>, supported by extensive descriptive and inferential analysis.</p>
           </div>
-          <div class="rside">
+          <div class="side">
             <span class="lbl">Methods</span>
             <div class="chips">
               <span class="chip">Six tree-based models</span>
@@ -178,49 +162,49 @@
             <a class="link" href="https://drive.google.com/file/d/1XD3jlq-bQOCFGgcjEUtSFAScwTdWby5k/view?usp=sharing" target="_blank" rel="noopener">Read the thesis<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
         </div>
-
-        <h4 class="subhead">Papers from this work</h4>
-        <div class="papers">
-          <div class="paper">
-            <span class="status">Accepted · TRBAM 2027</span>
-            <h4>Pair-Specific Time Headway Distributions and Covariate-Conditioned AFT Models for Pedal Rickshaws and Battery Operated Three Wheelers in Dhaka's Non-Lane-Based Heterogeneous Traffic</h4>
-            <p class="by">First author · Transportation Research Board (TRB) Annual Meeting 2027</p>
-            <div class="stats two">
-              <div><span class="stat-n"><span class="count" data-to="898">898</span></span><span class="stat-l">following events</span></div>
-              <div><span class="stat-n"><span class="count" data-to="8">8</span></span><span class="stat-l">follower–leader pairs</span></div>
-            </div>
-            <p>Built an automated extraction pipeline: a <strong>YOLO26</strong> detector paired with <strong>BoT-SORT</strong> tracking, then fitted pair-specific headway distributions and <strong>accelerated failure time (AFT) models</strong> to explain the distributional characteristics and shifts, accounting for covariate effects that feed both simulation modeling and the policy horizon.</p>
-            <a class="link" href="https://github.com/tahsinreza3109/Pair-Specific-Time-Headway-Distributions-and-Covariate-Conditioned-AFT-Models" target="_blank" rel="noopener">Code on GitHub<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-          </div>
-
-          <div class="paper">
-            <span class="status prep">In Preparation</span>
-            <h4>Following Behaviour and Its Regulation: A Time-Headway Study of Pedal- and Battery-Powered Three-Wheelers in Dhaka's Non-Lane-Based Traffic</h4>
-            <p class="by">First author</p>
-            <div class="stats">
-              <div><span class="stat-n"><span class="count" data-to="30">30</span>–<span class="count" data-to="39">39</span>%</span><span class="stat-l">closer following by battery three-wheelers</span></div>
-              <div><span class="stat-n"><span class="count" data-to="66">66</span>–<span class="count" data-to="80">80</span>%</span><span class="stat-l">of that gap is speed, not spacing</span></div>
-              <div><span class="stat-n"><span class="count" data-to="2.5" data-decimals="1">2.5</span>×</span><span class="stat-l">exposure to critically short following</span></div>
-            </div>
-            <p>Built a <strong>maximum-likelihood location–scale regression</strong> of vehicle time headway with an exact <strong>kinematic-identity decomposition</strong>, applied to 898 video-extracted following events from two Dhaka corridors.</p>
-            <img class="fig" src="assets/img/projects/one-label-headway.png" alt="Speed versus spacing scatter showing pedal rickshaw and battery three-wheeler class means on different iso-headway rays" loading="lazy">
-          </div>
-        </div>
       </article>
 
-      <article class="rcard reveal" id="intermodal">
-        <div class="rrow">
+      <p class="papers-label reveal">Papers from this work</p>
+      <div class="cards2">
+        <div class="card reveal" style="--d:var(--amber)">
+          <span class="dotlabel"><span class="dot"></span>Accepted · TRBAM 2027</span>
+          <h4>Pair-Specific Time Headway Distributions and Covariate-Conditioned AFT Models for Pedal Rickshaws and Battery Operated Three Wheelers in Dhaka's Non-Lane-Based Heterogeneous Traffic</h4>
+          <p class="by">First author · Transportation Research Board (TRB) Annual Meeting 2027</p>
+          <div class="stats two">
+            <div><span class="stat-n"><span class="count" data-to="898">898</span></span><span class="stat-l">following events</span></div>
+            <div><span class="stat-n"><span class="count" data-to="8">8</span></span><span class="stat-l">follower–leader pairs</span></div>
+          </div>
+          <p>Built an automated extraction pipeline: a <strong>YOLO26</strong> detector paired with <strong>BoT-SORT</strong> tracking, then fitted pair-specific headway distributions and <strong>accelerated failure time (AFT) models</strong> to explain the distributional characteristics and shifts, accounting for covariate effects that feed both simulation modeling and the policy horizon.</p>
+          <a class="link" href="https://github.com/tahsinreza3109/Pair-Specific-Time-Headway-Distributions-and-Covariate-Conditioned-AFT-Models" target="_blank" rel="noopener">Code on GitHub<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+
+        <div class="card reveal" style="--d:var(--blue)">
+          <span class="dotlabel"><span class="dot"></span>In preparation</span>
+          <h4>Following Behaviour and Its Regulation: A Time-Headway Study of Pedal- and Battery-Powered Three-Wheelers in Dhaka's Non-Lane-Based Traffic</h4>
+          <p class="by">First author</p>
+          <div class="stats">
+            <div><span class="stat-n"><span class="count" data-to="30">30</span>–<span class="count" data-to="39">39</span>%</span><span class="stat-l">closer following by battery three-wheelers</span></div>
+            <div><span class="stat-n"><span class="count" data-to="66">66</span>–<span class="count" data-to="80">80</span>%</span><span class="stat-l">of that gap is speed, not spacing</span></div>
+            <div><span class="stat-n"><span class="count" data-to="2.5" data-decimals="1">2.5</span>×</span><span class="stat-l">exposure to critically short following</span></div>
+          </div>
+          <p>Built a <strong>maximum-likelihood location–scale regression</strong> of vehicle time headway with an exact <strong>kinematic-identity decomposition</strong>, applied to 898 video-extracted following events from two Dhaka corridors.</p>
+          <img class="fig" src="assets/img/projects/one-label-headway.png" alt="Speed versus spacing scatter showing pedal rickshaw and battery three-wheeler class means on different iso-headway rays" loading="lazy">
+        </div>
+      </div>
+
+      <article class="card inter reveal" id="intermodal" style="--d:var(--blue)">
+        <div class="inter-row">
           <div>
-            <span class="rtag teal">Manuscript in preparation</span>
+            <span class="dotlabel"><span class="dot"></span>Manuscript in preparation</span>
             <h3>Intermodal versus Monomodal Trip-Making in Dhaka: Evidence from a Multilevel Choice Analysis</h3>
-            <p style="margin:0;font-size:16px;color:var(--muted)">Built a three-level (M0–M3) <strong>Bayesian multilevel logistic regression</strong> alongside an explainable <strong>Random Forest</strong> and <strong>SHAP</strong> pipeline to model monomodal versus intermodal trip choice across 25,242 trips nested within 3,729 Dhaka households. Household vehicle ownership emerged as the strongest driver of trip modality, and rickshaw-plus-walking as the dominant intermodal chain, 55 percent of the 6,838 intermodal trips, pointing to clear implications for paratransit and walking infrastructure policy.</p>
-            <div class="stats lone">
+            <p>Built a three-level (M0–M3) <strong>Bayesian multilevel logistic regression</strong> alongside an explainable <strong>Random Forest</strong> and <strong>SHAP</strong> pipeline to model monomodal versus intermodal trip choice across 25,242 trips nested within 3,729 Dhaka households. Household vehicle ownership emerged as the strongest driver of trip modality, and rickshaw-plus-walking as the dominant intermodal chain, 55 percent of the 6,838 intermodal trips, pointing to clear implications for paratransit and walking infrastructure policy.</p>
+            <div class="stats">
               <div><span class="stat-n"><span class="count" data-to="25242" data-comma="1">25,242</span></span><span class="stat-l">trips modeled</span></div>
               <div><span class="stat-n"><span class="count" data-to="3729" data-comma="1">3,729</span></span><span class="stat-l">Dhaka households</span></div>
               <div><span class="stat-n"><span class="count" data-to="55">55</span>%</span><span class="stat-l">of intermodal trips are rickshaw plus walking</span></div>
             </div>
           </div>
-          <img class="rfig" src="assets/img/projects/mono-inter-sankey.png" alt="Sankey diagram of observed mode sequences in intermodal trips" loading="lazy">
+          <img class="fig" src="assets/img/projects/mono-inter-sankey.png" alt="Sankey diagram of observed mode sequences in intermodal trips" loading="lazy">
         </div>
       </article>
     </div>
@@ -229,10 +213,7 @@
   <!-- ================= EDUCATION ================= -->
   <section aria-label="Education" id="education">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">04</span>
-        <h2 class="section-title">Education</h2>
-      </div>
+      <h2 class="sec-title reveal">Education</h2>
       <div class="edu-grid">
         <div class="edu reveal">
           <div class="yrs">2021 – 2026</div>
@@ -253,20 +234,14 @@
   <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
   <section aria-label="Professional Experience" id="professional-experience">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">05</span>
-        <h2 class="section-title">Professional Experience</h2>
-      </div>
+      <h2 class="sec-title reveal">Professional Experience</h2>
 
-      <div class="tl">
-        <span class="tl-line" aria-hidden="true"><span class="tl-fill"></span></span>
-
-        <div class="tl-item reveal">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-meta"><b>Oct 2026 – Present</b>Dhaka, Bangladesh</div>
-          <div class="tl-body">
+      <div class="rows">
+        <div class="row reveal">
+          <div class="row-meta"><b>Oct 2026 – Present</b>Dhaka, Bangladesh</div>
+          <div class="row-body">
             <h3>Research Assistant (Transportation Modeler)</h3>
-            <p class="tl-org">Department of Civil Engineering, Bangladesh University of Engineering and Technology (BUET)</p>
+            <p class="row-org">Department of Civil Engineering, Bangladesh University of Engineering and Technology (BUET)</p>
             <p>Project: Pre-Feasibility Study of Monorail Alignment Integration with Mass Transit Networks in Dhaka Metropolitan Region.</p>
             <ul>
               <li>Working with <strong>TransCAD</strong> travel demand models to analyze trip assignment and assess potential changes in ridership.</li>
@@ -274,12 +249,11 @@
           </div>
         </div>
 
-        <div class="tl-item reveal">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-meta"><b>Jul 2026 – Sep 2026</b>Dhaka, Bangladesh</div>
-          <div class="tl-body">
+        <div class="row reveal">
+          <div class="row-meta"><b>Jul 2026 – Sep 2026</b>Dhaka, Bangladesh</div>
+          <div class="row-body">
             <h3>Assistant Urban Planner</h3>
-            <p class="tl-org">Sheltech Consultants (Pvt.) Ltd.</p>
+            <p class="row-org">Sheltech Consultants (Pvt.) Ltd.</p>
             <ul>
               <li>Developed the transport volume of a Pourashava Master Plan from survey and interim reports, newly introducing capacity, flow and level-of-service analysis into the plan.</li>
               <li>Support the wider team on transport-related planning questions across the project.</li>
@@ -287,30 +261,27 @@
           </div>
         </div>
 
-        <div class="tl-item reveal">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-meta"><b>Nov – Dec 2025</b>Dhaka, Bangladesh</div>
-          <div class="tl-body">
+        <div class="row reveal">
+          <div class="row-meta"><b>Nov – Dec 2025</b>Dhaka, Bangladesh</div>
+          <div class="row-body">
             <h3>Student Intern</h3>
-            <p class="tl-org">Dhaka Transport Coordination Authority (DTCA)</p>
+            <p class="row-org">Dhaka Transport Coordination Authority (DTCA)</p>
             <ul>
               <li>Assessed the traffic impact of converting a road beside Basabo Balur Math, a field in a residential area with a busy bazaar at certain times of the day, into a pedestrian precinct.</li>
               <li>Ran the traffic and pedestrian surveys, then built and compared before-and-after microsimulation scenarios in <strong>PTV Vissim</strong> to test the proposed layout.</li>
             </ul>
-            <img class="tl-media" src="assets/img/projects/dtca-1.jpg" alt="After-scenario link delay, volume and level of service for the proposed Basabo pedestrian precinct" loading="lazy">
+            <img class="row-media" src="assets/img/projects/dtca-1.jpg" alt="After-scenario link delay, volume and level of service for the proposed Basabo pedestrian precinct" loading="lazy">
           </div>
         </div>
       </div>
 
-      <h3 class="subhead reveal">Teaching Experience</h3>
-      <div class="tl">
-        <span class="tl-line" aria-hidden="true"><span class="tl-fill"></span></span>
-        <div class="tl-item reveal">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <div class="tl-meta"><b>2021 – Present</b></div>
-          <div class="tl-body">
+      <p class="sub-label reveal">Teaching experience</p>
+      <div class="rows">
+        <div class="row reveal">
+          <div class="row-meta"><b>2021 – Present</b></div>
+          <div class="row-body">
             <h3>Tutor, Secondary and Higher Secondary Students</h3>
-            <p class="tl-org">Physics, Math, ICT, Chemistry</p>
+            <p class="row-org">Physics, Math, ICT, Chemistry</p>
             <ul>
               <li>Provided academic support to over 12 students across varying levels.</li>
               <li>Served as Mathematics instructor at a local coaching center.</li>
@@ -324,11 +295,8 @@
   <!-- ================= CLASS PROJECTS ================= -->
   <section aria-label="Class Projects" id="projects">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">06</span>
-        <h2 class="section-title">Class Projects</h2>
-      </div>
-      <p class="section-lede reveal">
+      <h2 class="sec-title reveal">Class Projects</h2>
+      <p class="lede reveal">
         Studio and coursework projects from my undergraduate years at BUET, across transportation, rural planning,
         disaster risk, heritage conservation and landscape design. Select a project image to browse its figures.
       </p>
@@ -348,7 +316,7 @@
             <span class="pcount">2 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Rural Planning Studio</span>
+            <span class="dotlabel"><span class="dot"></span>Rural Planning Studio</span>
             <h3>Analyzing Core Rural Road Networks and Land Use Conversion</h3>
             <p>A study of 14 upazilas in eastern Bangladesh, looking at how far the core rural road network reaches growth centers, markets and public facilities, and how road density relates to the conversion of agricultural land. Combined spatial analysis with a <strong>multiple linear regression</strong> model.</p>
             <a class="link" href="https://drive.google.com/file/d/1QjKabids2uzyMw8QXNuUplb4H1OoSxeF/view?usp=sharing" target="_blank" rel="noopener">Read the report<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -365,7 +333,7 @@
             <span class="pcount">3 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Participatory Planning Studio</span>
+            <span class="dotlabel"><span class="dot"></span>Participatory Planning Studio</span>
             <h3>Community-Based Assessment of Earthquake Risk Reduction, Ward 53</h3>
             <p>A participatory study of why a dense Dhaka ward stays vulnerable to earthquakes. Using <strong>vulnerability mapping</strong>, <strong>cause-effect diagrams</strong> and <strong>institutional Venn diagrams</strong> built with residents, the work traced how weak local governance and low public awareness reinforce each other.</p>
             <a class="link" href="https://drive.google.com/file/d/1SDwLQDM2ELr-yBqHL0-bVirQbGd3902F/view?usp=sharing" target="_blank" rel="noopener">Read the report<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -383,7 +351,7 @@
             <span class="pcount">4 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Social and Physical Survey</span>
+            <span class="dotlabel"><span class="dot"></span>Social and Physical Survey</span>
             <h3>Factors Influencing Access Mode Choice of Metro Rail Users in Dhaka</h3>
             <p>A survey-based study of how people reach the MRT-6 stations at Agargaon, Pallabi and Uttara. Rickshaw accounts for 41 percent of first-mile trips, and the mix shifts sharply by station and by surrounding land use. The analysis tests access mode against travel distance, waiting time, group size, income, gender, car ownership, road width and footpath coverage.</p>
             <a class="link" href="https://drive.google.com/file/d/1WyncF6mlmiKoGRsENP_P-z5MeyezMFhm/view?usp=sharing" target="_blank" rel="noopener">Read the report<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -402,7 +370,7 @@
             <span class="pcount">2 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Transport Planning Studio</span>
+            <span class="dotlabel"><span class="dot"></span>Transport Planning Studio</span>
             <h3>Factors Influencing Pedestrian Catchment of MRT Stations in Dhaka</h3>
             <p>How far people actually walk to reach an MRT station, and what changes that distance. Mapped observed walking catchments around major stations in <strong>GIS</strong>, then used a <strong>predictive model</strong> to rank the land use and demographic factors that widen or shrink them.</p>
             <a class="link" href="https://drive.google.com/file/d/1BdySweTpi4emk9dbvcqA6A2QPN92hcSS/view?usp=sharing" target="_blank" rel="noopener">Read the report<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -419,7 +387,7 @@
             <span class="pcount">3 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Landscape Planning Studio</span>
+            <span class="dotlabel"><span class="dot"></span>Landscape Planning Studio</span>
             <h3>HydroSculpt: Alleviating Waterlogging through Landscape Planning</h3>
             <p>An idea book on treating waterlogging as a landscape problem rather than a drainage one. It maps where water collects and why, then proposes four connected strategies: buffer zones, a green network, permeable setbacks and pervious roads, with a planting palette to match.</p>
             <a class="link" href="https://drive.google.com/file/d/16AqcYy_vNQUyj9_uVdw1qhMDMNfLXMcE/view?usp=sharing" target="_blank" rel="noopener">Read the idea book<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -437,7 +405,7 @@
             <span class="pcount">3 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Urban Planning Studio</span>
+            <span class="dotlabel"><span class="dot"></span>Urban Planning Studio</span>
             <h3>Heritage Conservation &amp; Tourism Planning: “Mughal Nurture,” Old Dhaka</h3>
             <p>Conservation policy and a tourism plan for five Mughal-era sites in Old Dhaka, including Lalbagh Fort, Choto Katara and Bahadur Shah Park. Each site was surveyed for structural condition and surrounding land use, then given a site-specific proposal covering authenticity, height restriction, street scape and traffic management.</p>
             <a class="link" href="https://drive.google.com/file/d/12CfnOjlGD1tfugITGh8v1XWeTRY3aM63/view?usp=sharing" target="_blank" rel="noopener">Read the report<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -455,7 +423,7 @@
             <span class="pcount">4 figures</span>
           </button>
           <div class="pbody">
-            <span class="pcourse">Programming Techniques</span>
+            <span class="dotlabel"><span class="dot"></span>Programming Techniques</span>
             <h3>Optimal Resource Allocation with North-West Corner and Least Cost Methods</h3>
             <p>A Python tool that solves the transportation problem two ways and shows its working. It computes an allocation from both the <strong>North-West Corner</strong> and <strong>Least Cost</strong> methods, visualizes the resulting matrix, and lets supply, demand and method be changed and re-solved.</p>
             <a class="link" href="https://docs.google.com/presentation/d/1QnljvrRG1zCDqpzqazBXM0qEnh9VOK2-/edit?usp=sharing" target="_blank" rel="noopener">View the presentation<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -475,10 +443,7 @@
   <!-- ================= SKILLS ================= -->
   <section aria-label="Technical & Research Skills" id="skills">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">07</span>
-        <h2 class="section-title">Technical &amp; Research Skills</h2>
-      </div>
+      <h2 class="sec-title reveal">Technical &amp; Research Skills</h2>
       <div>
         <div class="skill-row reveal"><div class="skill-k">Programming Languages</div><div class="skill-v"><span class="tag">Python</span><span class="tag">R</span><span class="tag">C</span></div></div>
         <div class="skill-row reveal"><div class="skill-k">GIS Tools</div><div class="skill-v"><span class="tag">ArcGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">Google Earth Engine</span></div></div>
@@ -493,10 +458,7 @@
   <!-- ================= AWARDS & LEADERSHIP ================= -->
   <section aria-label="Awards, Certifications & Leadership" id="awards">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="section-num">08</span>
-        <h2 class="section-title">Awards, Certifications &amp; Leadership</h2>
-      </div>
+      <h2 class="sec-title reveal">Awards, Certifications &amp; Leadership</h2>
       <div class="aw-cols">
         <div class="aw-col reveal">
           <h3>Academic awards &amp; certifications</h3>
@@ -517,12 +479,15 @@
 
 </main>
 
-<footer class="footer-band">
+<footer class="site-footer">
   <div class="footer-inner">
-    <span class="nm">Tahsin <span>Reza</span></span>
-    <div class="footer-lines" aria-hidden="true"><i style="background:#5B8FDB"></i><i style="background:#3BA898"></i><i style="background:#E0A458"></i></div>
-    <span>© <span id="year">2026</span> Tahsin Reza · Dhaka, Bangladesh</span>
-    <a class="to-top" href="#top">Back to top<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    <span>© <span id="year">2026</span> Tahsin Reza</span>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="mailto:tahsinreza3109@gmail.com">email</a><span aria-hidden="true">·</span>
+      <a href="https://github.com/tahsinreza3109" target="_blank" rel="noopener">github</a><span aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/tahsin-reza-3109at/" target="_blank" rel="noopener">linkedin</a><span aria-hidden="true">·</span>
+      <a href="https://orcid.org/0009-0006-0889-3589" target="_blank" rel="noopener">orcid</a>
+    </nav>
   </div>
 </footer>
 

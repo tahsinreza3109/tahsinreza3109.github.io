@@ -1,5 +1,5 @@
 // Theme toggle, mobile nav, scroll progress, active-section nav, scroll reveals,
-// count-up stats, timeline fill, project filters and the figure lightbox.
+// count-up stats, project filters and the figure lightbox.
 (function () {
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -38,22 +38,14 @@
     });
   }
 
-  /* ---------- Scroll progress + timeline fill (one rAF-throttled handler) ---------- */
-  var bar = document.getElementById('route-progress');
-  var timelines = Array.prototype.slice.call(document.querySelectorAll('.tl'));
+  /* ---------- Scroll progress (rAF-throttled) ---------- */
+  var bar = document.getElementById('progress');
   var ticking = false;
   function update() {
     ticking = false;
     var max = root.scrollHeight - window.innerHeight;
     var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
     if (bar) bar.style.transform = 'scaleX(' + p + ')';
-    if (!reduceMotion) {
-      timelines.forEach(function (tl) {
-        var r = tl.getBoundingClientRect();
-        var prog = (window.innerHeight * 0.65 - r.top) / r.height;
-        tl.style.setProperty('--p', Math.min(1, Math.max(0, prog)).toFixed(3));
-      });
-    }
   }
   function onScroll() {
     if (ticking) return;
