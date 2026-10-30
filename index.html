@@ -31,16 +31,14 @@
 
 <header class="site-header">
   <nav class="nav" aria-label="Main">
-    <a href="#top" class="brand">Tahsin Reza</a>
+    <a href="#about" class="brand">Tahsin Reza</a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Research</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#professional-experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#awards">Awards</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#research" data-nav="research">Research</a></li>
+      <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
+      <li><a href="#skills" data-nav="skills">Skills &amp; Awards</a></li>
     </ul>
 
     <div class="nav-right">
@@ -57,15 +55,16 @@
 
 <main id="top">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="hero">
+  <!-- ================= PAGE 1: ABOUT ================= -->
+  <section class="view" id="view-about" data-view="about" data-title="About" aria-label="About" tabindex="-1">
     <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-copy">
+
+      <div class="home-top">
+        <div class="home-id">
           <p class="hero-label"><span class="dot" style="--d:var(--accent)"></span>Transportation Planning Research</p>
           <h1><span class="w"><span>Tahsin</span></span> <span class="w"><span>Reza</span></span></h1>
 
-          <div class="hero-contact" id="contact">
+          <div class="home-contact" id="contact">
             <ul class="mail-list">
               <li><a href="mailto:tahsinreza3109@gmail.com">tahsinreza3109@gmail.com</a></li>
               <li><a href="mailto:2015029@urp.buet.ac.bd">2015029@urp.buet.ac.bd</a></li>
@@ -89,15 +88,10 @@
           <img src="assets/img/profile-hero.jpg" alt="Portrait of Tahsin Reza" width="690" height="900">
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ================= ABOUT + INTERESTS ================= -->
-  <section aria-label="About" id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <h2 class="sec-title reveal">About</h2>
-        <div class="about-body reveal">
+      <div class="home-bottom">
+        <div class="about-block">
+          <h2 class="mini-title">About</h2>
           <p>
             My work explores how people make travel decisions and how those decisions interact with safety in
             mixed-traffic streets. I bring together planning, spatial analysis, transportation modeling, data
@@ -111,62 +105,62 @@
             science to continue working at the intersection of mobility, safety, behavior, technology, and policy.
           </p>
         </div>
-      </div>
 
-      <div class="interests" id="interests">
-        <p class="sec-label reveal">Research interests</p>
-        <div class="int-grid">
-          <div class="int reveal">
-            <h3>Travel Behavior &amp; Mode Choice</h3>
-            <p>How people decide to travel, and why those decisions differ across households, incomes and geographical locations.</p>
-          </div>
-          <div class="int reveal">
-            <h3>Transport Policy &amp; Emerging Modes</h3>
-            <p>How informal and emerging modes enter a transport system, and how policy can respond to them fairly.</p>
-          </div>
-          <div class="int reveal">
-            <h3>Data-Driven Transport Planning</h3>
-            <p><strong>Statistical modeling</strong> and <strong>interpretable machine learning</strong> applied to mobility data.</p>
-          </div>
-          <div class="int reveal">
-            <h3>Accessibility, Safety &amp; Equity</h3>
-            <p>Who a transport system actually serves, who it leaves out, and how that gap can be measured and closed.</p>
+        <div class="interest-block" id="interests">
+          <h2 class="mini-title">Research interests</h2>
+          <div class="int-grid">
+            <div class="int">
+              <h3>Travel Behavior &amp; Mode Choice</h3>
+              <p>How people decide to travel, and why those decisions differ across households, incomes and geographical locations.</p>
+            </div>
+            <div class="int">
+              <h3>Transport Policy &amp; Emerging Modes</h3>
+              <p>How informal and emerging modes enter a transport system, and how policy can respond to them fairly.</p>
+            </div>
+            <div class="int">
+              <h3>Data-Driven Transport Planning</h3>
+              <p><strong>Statistical modeling</strong> and <strong>interpretable machine learning</strong> applied to mobility data.</p>
+            </div>
+            <div class="int">
+              <h3>Accessibility, Safety &amp; Equity</h3>
+              <p>Who a transport system actually serves, who it leaves out, and how that gap can be measured and closed.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <nav class="pager" aria-label="Next page">
+        <span></span>
+        <a class="pager-next" href="#research">Research <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
   </section>
 
-  <!-- ================= RESEARCH EXPERIENCE ================= -->
-  <section aria-label="Research Experience" id="experience">
+  <!-- ================= PAGE 2: RESEARCH ================= -->
+  <section class="view" id="view-research" data-view="research" data-title="Research" aria-label="Research Experience" tabindex="-1">
     <div class="wrap">
-      <h2 class="sec-title reveal">Research Experience</h2>
+      <header class="page-head">
+        <h2>Research Experience</h2>
+        <p>Bachelor's thesis, two papers from it, and one independent manuscript.</p>
+      </header>
 
-      <article class="thesis reveal">
-        <span class="dotlabel" style="--d:var(--blue)"><span class="dot"></span>Bachelor's thesis · 2025 – 2026</span>
-        <h3>Flow Characteristics of Traditional Rickshaws and Battery-Operated Three-Wheelers in Non-Lane-Based Heterogeneous Traffic of Dhaka</h3>
-        <p class="org">Department of Urban and Regional Planning, BUET · Supervisor: Dr. Md. Musleh Uddin Hasan · with Dr. Md Asif Raihan (Accident Research Institute, BUET)</p>
-        <div class="cols">
-          <div>
-            <p>Battery-operated three-wheelers now share Dhaka's roads with pedal rickshaws in large numbers, but traffic models, and the policy horizon built on them, still treat the two as a single class. The thesis asks whether that assumption holds, and what follows for how the modes should be regulated.</p>
-            <p>Videographic surveys were manually extracted into vehicle-pair observations and modeled with <strong>tree-based explainable machine learning</strong>, supported by extensive descriptive and inferential analysis.</p>
+      <div class="r-grid">
+        <article class="thesis">
+          <span class="dotlabel" style="--d:var(--blue)"><span class="dot"></span>Bachelor's thesis · 2025 – 2026</span>
+          <h3>Flow Characteristics of Traditional Rickshaws and Battery-Operated Three-Wheelers in Non-Lane-Based Heterogeneous Traffic of Dhaka</h3>
+          <p class="org">Department of Urban and Regional Planning, BUET · Supervisor: Dr. Md. Musleh Uddin Hasan · with Dr. Md Asif Raihan (Accident Research Institute, BUET)</p>
+          <p>Battery-operated three-wheelers now share Dhaka's roads with pedal rickshaws in large numbers, but traffic models, and the policy horizon built on them, still treat the two as a single class. The thesis asks whether that assumption holds, and what follows for how the modes should be regulated.</p>
+          <p>Videographic surveys were manually extracted into vehicle-pair observations and modeled with <strong>tree-based explainable machine learning</strong>, supported by extensive descriptive and inferential analysis.</p>
+          <div class="chips">
+            <span class="chip">Six tree-based models</span>
+            <span class="chip">Tuned CatBoost</span>
+            <span class="chip">SHAP analysis</span>
+            <span class="chip">Non-parametric tests</span>
           </div>
-          <div class="side">
-            <span class="lbl">Methods</span>
-            <div class="chips">
-              <span class="chip">Six tree-based models</span>
-              <span class="chip">Tuned CatBoost</span>
-              <span class="chip">SHAP analysis</span>
-              <span class="chip">Non-parametric tests</span>
-            </div>
-            <a class="link" href="https://drive.google.com/file/d/1XD3jlq-bQOCFGgcjEUtSFAScwTdWby5k/view?usp=sharing" target="_blank" rel="noopener">Read the thesis<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-          </div>
-        </div>
-      </article>
+          <a class="link" href="https://drive.google.com/file/d/1XD3jlq-bQOCFGgcjEUtSFAScwTdWby5k/view?usp=sharing" target="_blank" rel="noopener">Read the thesis<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </article>
 
-      <p class="papers-label reveal">Papers from this work</p>
-      <div class="cards2">
-        <div class="card reveal" style="--d:var(--amber)">
+        <div class="card" style="--d:var(--amber)">
           <span class="dotlabel"><span class="dot"></span>Accepted · TRBAM 2027</span>
           <h4>Pair-Specific Time Headway Distributions and Covariate-Conditioned AFT Models for Pedal Rickshaws and Battery Operated Three Wheelers in Dhaka's Non-Lane-Based Heterogeneous Traffic</h4>
           <p class="by">First author · Transportation Research Board (TRB) Annual Meeting 2027</p>
@@ -178,7 +172,7 @@
           <a class="link" href="https://github.com/tahsinreza3109/Pair-Specific-Time-Headway-Distributions-and-Covariate-Conditioned-AFT-Models" target="_blank" rel="noopener">Code on GitHub<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
 
-        <div class="card reveal" style="--d:var(--blue)">
+        <div class="card" style="--d:var(--blue)">
           <span class="dotlabel"><span class="dot"></span>In preparation</span>
           <h4>Following Behaviour and Its Regulation: A Time-Headway Study of Pedal- and Battery-Powered Three-Wheelers in Dhaka's Non-Lane-Based Traffic</h4>
           <p class="by">First author</p>
@@ -192,7 +186,7 @@
         </div>
       </div>
 
-      <article class="card inter reveal" id="intermodal" style="--d:var(--blue)">
+      <article class="card inter" id="intermodal" style="--d:var(--blue)">
         <div class="inter-row">
           <div>
             <span class="dotlabel"><span class="dot"></span>Manuscript in preparation</span>
@@ -207,101 +201,109 @@
           <img class="fig" src="assets/img/projects/mono-inter-sankey.png" alt="Sankey diagram of observed mode sequences in intermodal trips" loading="lazy">
         </div>
       </article>
+
+      <nav class="pager" aria-label="Page navigation">
+        <a class="pager-prev" href="#about"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> About</a>
+        <a class="pager-next" href="#experience">Experience <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section aria-label="Education" id="education">
+  <!-- ================= PAGE 3: EXPERIENCE + EDUCATION ================= -->
+  <section class="view" id="view-experience" data-view="experience" data-title="Experience" aria-label="Experience and Education" tabindex="-1">
     <div class="wrap">
-      <h2 class="sec-title reveal">Education</h2>
-      <div class="edu-grid">
-        <div class="edu reveal">
-          <div class="yrs">2021 – 2026</div>
-          <h3>Bachelor of Urban and Regional Planning (BURP)</h3>
-          <p>Bangladesh University of Engineering and Technology (BUET), Dhaka</p>
-          <p class="detail">CGPA 3.70 / 4.00 · Graduated June 2026</p>
-        </div>
-        <div class="edu reveal">
-          <div class="yrs">2018 – 2020</div>
-          <h3>Higher Secondary Certificate (HSC)</h3>
-          <p>Faujdarhat Cadet College</p>
-          <p class="detail">GPA 5.00 / 5.00</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <header class="page-head">
+        <h2>Experience &amp; Education</h2>
+        <p>Professional roles, degrees and teaching.</p>
+      </header>
 
-  <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
-  <section aria-label="Professional Experience" id="professional-experience">
-    <div class="wrap">
-      <h2 class="sec-title reveal">Professional Experience</h2>
+      <div class="e-grid">
+        <div class="e-main">
+          <p class="sub-label">Professional experience</p>
+          <div class="rows">
+            <div class="row">
+              <div class="row-meta"><b>Oct 2026 – Present</b>Dhaka, Bangladesh</div>
+              <div class="row-body">
+                <h3>Research Assistant (Transportation Modeler)</h3>
+                <p class="row-org">Department of Civil Engineering, Bangladesh University of Engineering and Technology (BUET)</p>
+                <p>Project: Pre-Feasibility Study of Monorail Alignment Integration with Mass Transit Networks in Dhaka Metropolitan Region.</p>
+                <ul>
+                  <li>Working with <strong>TransCAD</strong> travel demand models to analyze trip assignment and assess potential changes in ridership.</li>
+                </ul>
+              </div>
+            </div>
 
-      <div class="rows">
-        <div class="row reveal">
-          <div class="row-meta"><b>Oct 2026 – Present</b>Dhaka, Bangladesh</div>
-          <div class="row-body">
-            <h3>Research Assistant (Transportation Modeler)</h3>
-            <p class="row-org">Department of Civil Engineering, Bangladesh University of Engineering and Technology (BUET)</p>
-            <p>Project: Pre-Feasibility Study of Monorail Alignment Integration with Mass Transit Networks in Dhaka Metropolitan Region.</p>
-            <ul>
-              <li>Working with <strong>TransCAD</strong> travel demand models to analyze trip assignment and assess potential changes in ridership.</li>
-            </ul>
+            <div class="row">
+              <div class="row-meta"><b>Jul 2026 – Sep 2026</b>Dhaka, Bangladesh</div>
+              <div class="row-body">
+                <h3>Assistant Urban Planner</h3>
+                <p class="row-org">Sheltech Consultants (Pvt.) Ltd.</p>
+                <ul>
+                  <li>Developed the transport volume of a Pourashava Master Plan from survey and interim reports, newly introducing capacity, flow and level-of-service analysis into the plan.</li>
+                  <li>Support the wider team on transport-related planning questions across the project.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="row-meta"><b>Nov – Dec 2025</b>Dhaka, Bangladesh</div>
+              <div class="row-body">
+                <h3>Student Intern</h3>
+                <p class="row-org">Dhaka Transport Coordination Authority (DTCA)</p>
+                <ul>
+                  <li>Assessed the traffic impact of converting a road beside Basabo Balur Math, a field in a residential area with a busy bazaar at certain times of the day, into a pedestrian precinct.</li>
+                  <li>Ran the traffic and pedestrian surveys, then built and compared before-and-after microsimulation scenarios in <strong>PTV Vissim</strong> to test the proposed layout.</li>
+                </ul>
+                <img class="row-media" src="assets/img/projects/dtca-1.jpg" alt="After-scenario link delay, volume and level of service for the proposed Basabo pedestrian precinct" loading="lazy">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="row reveal">
-          <div class="row-meta"><b>Jul 2026 – Sep 2026</b>Dhaka, Bangladesh</div>
-          <div class="row-body">
-            <h3>Assistant Urban Planner</h3>
-            <p class="row-org">Sheltech Consultants (Pvt.) Ltd.</p>
-            <ul>
-              <li>Developed the transport volume of a Pourashava Master Plan from survey and interim reports, newly introducing capacity, flow and level-of-service analysis into the plan.</li>
-              <li>Support the wider team on transport-related planning questions across the project.</li>
-            </ul>
+        <aside class="e-side">
+          <p class="sub-label">Education</p>
+          <div class="edu">
+            <div class="yrs">2021 – 2026</div>
+            <h3>Bachelor of Urban and Regional Planning (BURP)</h3>
+            <p>Bangladesh University of Engineering and Technology (BUET), Dhaka</p>
+            <p class="detail">CGPA 3.70 / 4.00 · Graduated June 2026</p>
           </div>
-        </div>
-
-        <div class="row reveal">
-          <div class="row-meta"><b>Nov – Dec 2025</b>Dhaka, Bangladesh</div>
-          <div class="row-body">
-            <h3>Student Intern</h3>
-            <p class="row-org">Dhaka Transport Coordination Authority (DTCA)</p>
-            <ul>
-              <li>Assessed the traffic impact of converting a road beside Basabo Balur Math, a field in a residential area with a busy bazaar at certain times of the day, into a pedestrian precinct.</li>
-              <li>Ran the traffic and pedestrian surveys, then built and compared before-and-after microsimulation scenarios in <strong>PTV Vissim</strong> to test the proposed layout.</li>
-            </ul>
-            <img class="row-media" src="assets/img/projects/dtca-1.jpg" alt="After-scenario link delay, volume and level of service for the proposed Basabo pedestrian precinct" loading="lazy">
+          <div class="edu">
+            <div class="yrs">2018 – 2020</div>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p>Faujdarhat Cadet College</p>
+            <p class="detail">GPA 5.00 / 5.00</p>
           </div>
-        </div>
-      </div>
 
-      <p class="sub-label reveal">Teaching experience</p>
-      <div class="rows">
-        <div class="row reveal">
-          <div class="row-meta"><b>2021 – Present</b></div>
-          <div class="row-body">
+          <p class="sub-label">Teaching experience</p>
+          <div class="edu">
+            <div class="yrs">2021 – Present</div>
             <h3>Tutor, Secondary and Higher Secondary Students</h3>
-            <p class="row-org">Physics, Math, ICT, Chemistry</p>
-            <ul>
+            <p>Physics, Math, ICT, Chemistry</p>
+            <ul class="mini-list">
               <li>Provided academic support to over 12 students across varying levels.</li>
               <li>Served as Mathematics instructor at a local coaching center.</li>
             </ul>
           </div>
-        </div>
+        </aside>
       </div>
+
+      <nav class="pager" aria-label="Page navigation">
+        <a class="pager-prev" href="#research"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Research</a>
+        <a class="pager-next" href="#projects">Projects <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
   </section>
 
-  <!-- ================= CLASS PROJECTS ================= -->
-  <section aria-label="Class Projects" id="projects">
+  <!-- ================= PAGE 4: CLASS PROJECTS ================= -->
+  <section class="view" id="view-projects" data-view="projects" data-title="Projects" aria-label="Class Projects" tabindex="-1">
     <div class="wrap">
-      <h2 class="sec-title reveal">Class Projects</h2>
-      <p class="lede reveal">
-        Studio and coursework projects from my undergraduate years at BUET, across transportation, rural planning,
-        disaster risk, heritage conservation and landscape design. Select a project image to browse its figures.
-      </p>
+      <header class="page-head">
+        <h2>Class Projects</h2>
+        <p>Studio and coursework from my undergraduate years at BUET. Select an image to browse its figures.</p>
+      </header>
 
-      <div class="filters reveal" role="group" aria-label="Filter projects">
+      <div class="filters" role="group" aria-label="Filter projects">
         <button class="fchip" type="button" aria-pressed="true" data-filter="All">All</button>
         <button class="fchip" type="button" aria-pressed="false" data-filter="Transport">Transport</button>
         <button class="fchip" type="button" aria-pressed="false" data-filter="Planning &amp; Design">Planning &amp; Design</button>
@@ -437,43 +439,51 @@
         </article>
 
       </div>
+
+      <nav class="pager" aria-label="Page navigation">
+        <a class="pager-prev" href="#experience"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Experience</a>
+        <a class="pager-next" href="#skills">Skills &amp; Awards <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
   </section>
 
-  <!-- ================= SKILLS ================= -->
-  <section aria-label="Technical & Research Skills" id="skills">
+  <!-- ================= PAGE 5: SKILLS + AWARDS ================= -->
+  <section class="view" id="view-skills" data-view="skills" data-title="Skills & Awards" aria-label="Skills, Awards and Leadership" tabindex="-1">
     <div class="wrap">
-      <h2 class="sec-title reveal">Technical &amp; Research Skills</h2>
-      <div>
-        <div class="skill-row reveal"><div class="skill-k">Programming Languages</div><div class="skill-v"><span class="tag">Python</span><span class="tag">R</span><span class="tag">C</span></div></div>
-        <div class="skill-row reveal"><div class="skill-k">GIS Tools</div><div class="skill-v"><span class="tag">ArcGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">Google Earth Engine</span></div></div>
-        <div class="skill-row reveal"><div class="skill-k">Transportation Modeling</div><div class="skill-v"><span class="tag">PTV Vissim</span><span class="tag">TransCAD</span></div></div>
-        <div class="skill-row reveal"><div class="skill-k">Modeling &amp; Machine Learning</div><div class="skill-v"><span class="tag">Discrete Choice Models</span><span class="tag">Survival / AFT Models</span><span class="tag">Tree-Based Ensemble Models</span><span class="tag">SHAP</span><span class="tag">YOLO Object Detection</span></div></div>
-        <div class="skill-row reveal"><div class="skill-k">Design &amp; Drafting</div><div class="skill-v"><span class="tag">AutoCAD</span><span class="tag">Adobe Illustrator</span><span class="tag">Adobe Photoshop</span></div></div>
-        <div class="skill-row reveal"><div class="skill-k">Productivity</div><div class="skill-v"><span class="tag">MS Word</span><span class="tag">MS Excel</span><span class="tag">MS PowerPoint</span><span class="tag">MS Project</span><span class="tag">CapCut</span></div></div>
-      </div>
-    </div>
-  </section>
+      <header class="page-head">
+        <h2>Skills, Awards &amp; Leadership</h2>
+        <p>Technical and research toolkit, recognition and service.</p>
+      </header>
 
-  <!-- ================= AWARDS & LEADERSHIP ================= -->
-  <section aria-label="Awards, Certifications & Leadership" id="awards">
-    <div class="wrap">
-      <h2 class="sec-title reveal">Awards, Certifications &amp; Leadership</h2>
-      <div class="aw-cols">
-        <div class="aw-col reveal">
-          <h3>Academic awards &amp; certifications</h3>
+      <div class="s-grid">
+        <div class="s-main">
+          <p class="sub-label">Technical &amp; research skills</p>
+          <div class="skill-row"><div class="skill-k">Programming Languages</div><div class="skill-v"><span class="tag">Python</span><span class="tag">R</span><span class="tag">C</span></div></div>
+          <div class="skill-row"><div class="skill-k">GIS Tools</div><div class="skill-v"><span class="tag">ArcGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">Google Earth Engine</span></div></div>
+          <div class="skill-row"><div class="skill-k">Transportation Modeling</div><div class="skill-v"><span class="tag">PTV Vissim</span><span class="tag">TransCAD</span></div></div>
+          <div class="skill-row"><div class="skill-k">Modeling &amp; Machine Learning</div><div class="skill-v"><span class="tag">Discrete Choice Models</span><span class="tag">Survival / AFT Models</span><span class="tag">Tree-Based Ensemble Models</span><span class="tag">SHAP</span><span class="tag">YOLO Object Detection</span></div></div>
+          <div class="skill-row"><div class="skill-k">Design &amp; Drafting</div><div class="skill-v"><span class="tag">AutoCAD</span><span class="tag">Adobe Illustrator</span><span class="tag">Adobe Photoshop</span></div></div>
+          <div class="skill-row"><div class="skill-k">Productivity</div><div class="skill-v"><span class="tag">MS Word</span><span class="tag">MS Excel</span><span class="tag">MS PowerPoint</span><span class="tag">MS Project</span><span class="tag">CapCut</span></div></div>
+        </div>
+
+        <aside class="s-side">
+          <p class="sub-label">Academic awards &amp; certifications</p>
           <div class="aw"><span class="aw-y">2023</span><span class="aw-t"><strong>University Merit Scholarship</strong>BUET, for academic performance at the undergraduate level.</span></div>
           <div class="aw"><span class="aw-y">2023</span><span class="aw-t"><strong>Excel Skills for Business Specialization</strong>Coursera certification in Excel-based data analysis, forecasting and dashboarding.</span></div>
           <div class="aw"><span class="aw-y">2022</span><span class="aw-t"><strong>University Stipend</strong>BUET, for academic performance at the undergraduate level.</span></div>
-        </div>
-        <div class="aw-col reveal">
-          <h3>Leadership &amp; service</h3>
+
+          <p class="sub-label">Leadership &amp; service</p>
           <div class="aw"><span class="aw-y">2025 – 2026</span><span class="aw-t"><strong>Secretary, Student Chapter</strong>Bangladesh Institute of Planners (BIP)</span></div>
           <div class="aw"><span class="aw-y">2025 – 2026</span><span class="aw-t"><strong>Vice President</strong>URP Students Association of BUET (USAB)</span></div>
           <div class="aw"><span class="aw-y">2025 – 2026</span><span class="aw-t"><strong>Joint General Secretary</strong>Help_BUETian - volunteering, social service and student support.</span></div>
           <div class="aw"><span class="aw-y">2024 – 2025</span><span class="aw-t"><strong>Deputy General Secretary</strong>Help_BUETian - volunteering, social service and student support.</span></div>
-        </div>
+        </aside>
       </div>
+
+      <nav class="pager" aria-label="Page navigation">
+        <a class="pager-prev" href="#projects"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Projects</a>
+        <a class="pager-next" href="#about">Back to start <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </nav>
     </div>
   </section>
 
