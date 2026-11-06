@@ -1,5 +1,7 @@
 # Tahsin Reza - Academic Portfolio
 
+Personal website of Tahsin Reza, an urban planner (BURP, BUET) working in transportation planning research. It covers his research, work experience, class projects, skills and awards.
+
 Live site: https://tahsinreza3109.github.io
 
 A static site with no build step: plain HTML, CSS and vanilla JavaScript.
