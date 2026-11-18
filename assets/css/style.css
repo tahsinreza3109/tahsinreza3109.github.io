@@ -342,6 +342,8 @@ main, .site-footer{ position:relative; z-index:1; }
 .aw-y{ flex:0 0 78px; font-size:12.5px; color:var(--faint); padding-top:2px; font-variant-numeric:tabular-nums; }
 .aw-t{ font-size:13px; line-height:1.5; color:var(--muted); }
 .aw-t strong{ display:block; font-size:14px; }
+.aw.score .aw-t strong{ display:flex; align-items:baseline; gap:10px; }
+.score-n{ font-family:var(--font-head); font-size:22px; font-weight:700; letter-spacing:-.03em; line-height:1; color:var(--ink); padding:2px 9px; border-radius:8px; background:color-mix(in srgb, var(--accent) 22%, transparent); }
 
 /* ---------- Contact ---------- */
 .contact-card{
