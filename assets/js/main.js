@@ -1,9 +1,10 @@
-// Page router (five pages, one at a time), theme toggle, mobile nav, scroll progress,
-// count-up stats, project filters, the figure lightbox and pointer feedback.
-// Without JavaScript every page simply stacks and stays readable.
+// One scrolling page: theme toggle, mobile nav, scroll progress, active-section highlight,
+// reveal-on-scroll, count-up stats, project filters, the figure lightbox and pointer feedback.
+// Without JavaScript everything is simply visible and readable.
 (function () {
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
 
   /* ---------- Theme ---------- */
   var toggle = document.getElementById('theme-toggle');
@@ -26,27 +27,33 @@
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('nav-toggle');
   var navLinks = document.getElementById('nav-links');
+  function closeNav() {
+    if (!navLinks) return;
+    navLinks.classList.remove('open');
+    navToggle && navToggle.setAttribute('aria-expanded', 'false');
+  }
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
       var isOpen = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    navLinks.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+    navLinks.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
   }
 
-  /* ---------- Scroll progress (rAF-throttled) ---------- */
+  /* ---------- Scroll progress, header shadow, back-to-top (rAF-throttled) ---------- */
   var bar = document.getElementById('progress');
+  var toTop = document.getElementById('to-top');
   var ticking = false;
   function update() {
     ticking = false;
+    var y = window.scrollY;
     var max = root.scrollHeight - window.innerHeight;
-    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    var p = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
     if (bar) bar.style.transform = 'scaleX(' + p + ')';
+    root.classList.toggle('is-scrolled', y > 8);
+    if (toTop) toTop.classList.toggle('show', y > window.innerHeight * 0.9);
+    if (typeof spy === 'function') spy();
   }
   function onScroll() {
     if (ticking) return;
@@ -56,6 +63,26 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
 
+  /* ---------- Active section in the nav ---------- */
+  var navAnchors = navLinks ? Array.prototype.slice.call(navLinks.querySelectorAll('a[data-nav]')) : [];
+  function setActive(id) {
+    navAnchors.forEach(function (a) {
+      var on = a.getAttribute('data-nav') === id;
+      a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+  var spySections = navAnchors.map(function (a) { return document.getElementById(a.getAttribute('data-nav')); }).filter(Boolean);
+  var activeId = null;
+  function spy() {
+    // the active section is the last one whose top has passed 40% of the viewport;
+    // at the very bottom of the page the last section wins
+    var line = window.innerHeight * 0.4, id = '';
+    spySections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) id = s.id; });
+    if (window.innerHeight + window.scrollY >= root.scrollHeight - 4 && spySections.length) id = spySections[spySections.length - 1].id;
+    if (id !== activeId) { activeId = id; setActive(id); }
+  }
+
   /* ---------- Count-up stats ---------- */
   function format(el, v) {
     var d = parseInt(el.getAttribute('data-decimals') || '0', 10);
@@ -63,6 +90,8 @@
     return d ? v.toFixed(d) : String(Math.round(v));
   }
   function runCount(el) {
+    if (el.getAttribute('data-done')) return;
+    el.setAttribute('data-done', '1');
     var to = parseFloat(el.getAttribute('data-to'));
     var finalText = el.textContent;
     var t0 = null;
@@ -75,67 +104,36 @@
     }
     window.requestAnimationFrame(step);
   }
-  function countIn(view) {
-    if (reduceMotion) return;
-    view.querySelectorAll('.count').forEach(function (el) {
-      if (el.getAttribute('data-done')) return;
-      el.setAttribute('data-done', '1');
-      window.setTimeout(function () { runCount(el); }, 250);
-    });
+
+  /* ---------- Reveal on scroll ----------
+     Content is hidden only while html.js-anim is set (added in <head> when IntersectionObserver
+     exists and motion is allowed). If the observer never reports, everything is shown anyway. */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function showAll() {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+    root.classList.remove('js-anim');
   }
-
-  /* ---------- Pages ---------- */
-  var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
-  var names = views.map(function (v) { return v.getAttribute('data-view'); });
-  var legacy = {
-    interests: 'about', education: 'experience', 'professional-experience': 'experience',
-    awards: 'skills', intermodal: 'research'
-  };
-  var baseTitle = document.title;
-  var current = null;
-  var switching = false;
-
-  function routeFromHash() {
-    var h = (window.location.hash || '').replace(/^#\/?/, '');
-    if (legacy[h]) h = legacy[h];
-    return names.indexOf(h) > -1 ? h : 'about';
-  }
-  function viewOf(name) { return views[names.indexOf(name)]; }
-
-  function reveal(name, userInitiated) {
-    var view = viewOf(name);
-    views.forEach(function (v) { v.hidden = v !== view; v.classList.remove('is-leaving'); });
-    navLinks && navLinks.querySelectorAll('a[data-nav]').forEach(function (a) {
-      var on = a.getAttribute('data-nav') === name;
-      a.classList.toggle('active', on);
-      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
-    });
-    document.title = name === 'about' ? baseTitle : view.getAttribute('data-title') + ' - Tahsin Reza';
-    window.scrollTo(0, 0);
-    current = name;
-    switching = false;
-    update();
-    countIn(view);
-    if (userInitiated) view.focus({ preventScroll: true });
-  }
-
-  function go(name, userInitiated) {
-    if (name === current || switching) return;
-    var out = current ? viewOf(current) : null;
-    if (out && !reduceMotion) {
-      // exits are quicker than entrances
-      switching = true;
-      out.classList.add('is-leaving');
-      window.setTimeout(function () { reveal(name, userInitiated); }, 150);
-    } else {
-      reveal(name, userInitiated);
-    }
-  }
-
-  if (views.length) {
-    root.classList.add('js-pages');
-    reveal(routeFromHash(), false);
-    window.addEventListener('hashchange', function () { go(routeFromHash(), true); });
+  if (root.classList.contains('js-anim') && hasIO) {
+    var seen = false;
+    var io = new IntersectionObserver(function (entries) {
+      seen = true;
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        // stagger siblings that enter together
+        var sibs = el.parentElement ? Array.prototype.filter.call(el.parentElement.children, function (c) { return c.classList.contains('reveal'); }) : [];
+        var i = Math.max(0, sibs.indexOf(el));
+        el.style.transitionDelay = Math.min(i, 6) * 60 + 'ms';
+        el.classList.add('in');
+        el.querySelectorAll('.count').forEach(function (c) { window.setTimeout(function () { runCount(c); }, 200); });
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+    reveals.forEach(function (el) { io.observe(el); });
+    window.setTimeout(function () { if (!seen) showAll(); }, 2500);
+    window.addEventListener('beforeprint', showAll);
+  } else {
+    root.classList.remove('js-anim');
   }
 
   /* ---------- Project filters ---------- */
@@ -147,6 +145,7 @@
       chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
       cards.forEach(function (card) {
         var show = f === 'All' || card.getAttribute('data-cat') === f;
+        card.classList.add('in');
         if (reduceMotion) { card.hidden = !show; return; }
         if (show) {
           card.hidden = false;
@@ -209,7 +208,7 @@
   if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     // a soft spotlight follows the cursor across cards
     document.addEventListener('mousemove', function (e) {
-      var card = e.target.closest ? e.target.closest('.card, .pcard') : null;
+      var card = e.target.closest ? e.target.closest('.card, .pcard, .thesis') : null;
       if (!card) return;
       var r = card.getBoundingClientRect();
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -217,15 +216,15 @@
     }, { passive: true });
 
     // the outline behind the portrait drifts a few pixels against the cursor
-    var home = document.getElementById('view-about');
+    var heroSec = document.getElementById('top');
     var photo = document.querySelector('.hero-photo');
-    if (home && photo) {
-      home.addEventListener('mousemove', function (e) {
-        var r = home.getBoundingClientRect();
+    if (heroSec && photo) {
+      heroSec.addEventListener('mousemove', function (e) {
+        var r = heroSec.getBoundingClientRect();
         photo.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
         photo.style.setProperty('--py', ((e.clientY - r.top) / Math.max(r.height, 1) - 0.5).toFixed(3));
       }, { passive: true });
-      home.addEventListener('mouseleave', function () {
+      heroSec.addEventListener('mouseleave', function () {
         photo.style.setProperty('--px', 0);
         photo.style.setProperty('--py', 0);
       });
