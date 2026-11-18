@@ -334,11 +334,11 @@ main, .site-footer{ position:relative; z-index:1; }
 
 /* ---------- Skills + awards ---------- */
 .s-grid{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:32px clamp(32px,5vw,56px); }
-.skill-row{ display:flex; flex-wrap:wrap; gap:6px 16px; padding:12px 0; border-top:1px solid var(--line); }
+.skill-row{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; padding:12px 0; border-top:1px solid var(--line); }
 .s-main .sub-label + .skill-row{ border-top:none; padding-top:0; }
-.skill-k{ flex:0 0 160px; font-size:13.5px; font-weight:600; padding-top:3px; line-height:1.35; }
-.skill-v{ flex:1 1 240px; display:flex; flex-wrap:wrap; gap:6px; }
-.tag{ padding:3px 11px; border-radius:999px; border:1px solid var(--line2); font-size:13px; color:var(--muted); transition:border-color .2s ease, color .2s ease, transform .2s ease; }
+.skill-k{ flex:0 0 160px; font-size:13.5px; font-weight:600; line-height:1.35; }
+.skill-v{ flex:1 1 240px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.tag{ display:inline-flex; align-items:center; line-height:1.4; padding:3px 11px; border-radius:999px; border:1px solid var(--line2); font-size:13px; color:var(--muted); transition:border-color .2s ease, color .2s ease, transform .2s ease; }
 .tag:hover{ border-color:var(--ink); color:var(--ink); transform:translateY(-1px); }
 .s-side .sub-label:not(:first-child){ margin-top:28px; }
 .aw{ display:flex; gap:14px; padding:10px 0; border-bottom:1px solid var(--line); transition:padding-left .25s ease; }
