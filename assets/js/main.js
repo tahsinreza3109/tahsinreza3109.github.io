@@ -225,7 +225,7 @@
     }, { passive: true });
 
     // the outline behind the portrait drifts a few pixels against the cursor
-    var heroSec = document.getElementById('top');
+    var heroSec = document.getElementById('about');
     var photo = document.querySelector('.hero-photo');
     if (heroSec && photo) {
       heroSec.addEventListener('mousemove', function (e) {

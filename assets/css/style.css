@@ -146,7 +146,7 @@ main, .site-footer{ position:relative; z-index:1; }
 .sec-head p{ grid-column:2; margin:0; font-size:14.5px; color:var(--faint); max-width:60ch; }
 
 /* ---------- Hero ---------- */
-.hero{ position:relative; min-height:min(760px, calc(100svh - var(--head-h))); display:flex; flex-direction:column; justify-content:center; padding:clamp(28px,5vw,56px) 0 clamp(56px,7vw,80px); }
+.hero{ position:relative; display:flex; flex-direction:column; padding:clamp(28px,4.5vw,52px) 0 clamp(56px,8vw,96px); }
 .hero > .wrap{ width:100%; }
 .hero-grid{ display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:28px clamp(32px,6vw,80px); width:100%; }
 .hero-id{ min-width:0; }
@@ -156,7 +156,10 @@ main, .site-footer{ position:relative; z-index:1; }
 .hero h1 .w > span{ display:inline-block; animation:rise .9s cubic-bezier(.16,1,.3,1) .12s both; }
 .hero h1 .w + .w > span{ animation-delay:.24s; }
 .hero-lede{ max-width:34em; margin:0 0 8px; font-size:clamp(16.5px,1.6vw,19px); line-height:1.5; color:var(--ink); animation:fade-up .8s ease .35s both; }
-.hero-role{ margin:0 0 24px; font-size:14px; color:var(--faint); animation:fade-up .8s ease .42s both; }
+.hero-role{ margin:0 0 16px; font-size:14px; color:var(--faint); animation:fade-up .8s ease .42s both; }
+.hero-about{ max-width:40em; margin:0 0 24px; animation:fade-up .8s ease .46s both; }
+.hero-about p{ margin:0 0 10px; font-size:14.5px; line-height:1.68; color:var(--muted); }
+.hero-about .about-lead{ font-size:clamp(16px,1.45vw,17.5px); line-height:1.6; color:var(--ink); }
 .hero-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; animation:fade-up .8s ease .5s both; }
 .btn{ display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 18px; border-radius:999px; font-size:14px; font-weight:600; transition:transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
 .btn svg{ width:15px; height:15px; transition:transform .25s ease; }
