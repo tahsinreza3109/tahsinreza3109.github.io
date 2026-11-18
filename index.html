@@ -125,29 +125,67 @@
           </p>
         </div>
 
-        <div class="interest-block" id="interests">
-          <h3 class="sub-label reveal">Research interests</h3>
-          <div class="int-grid">
-            <div class="int reveal">
-              <span class="int-n">i</span>
-              <h4>Travel Behavior &amp; Mode Choice</h4>
-              <p>How people decide to travel, and why those decisions differ across households, incomes and geographical locations.</p>
-            </div>
-            <div class="int reveal">
-              <span class="int-n">ii</span>
-              <h4>Transport Policy &amp; Emerging Modes</h4>
-              <p>How informal and emerging modes enter a transport system, and how policy can respond to them fairly.</p>
-            </div>
-            <div class="int reveal">
-              <span class="int-n">iii</span>
-              <h4>Data-Driven Transport Planning</h4>
-              <p><strong>Statistical modeling</strong> and <strong>interpretable machine learning</strong> applied to mobility data.</p>
-            </div>
-            <div class="int reveal">
-              <span class="int-n">iv</span>
-              <h4>Accessibility, Safety &amp; Equity</h4>
-              <p>Who a transport system actually serves, who it leaves out, and how that gap can be measured and closed.</p>
-            </div>
+      </div>
+
+      <div class="interest-block" id="interests">
+        <div class="int-head reveal">
+          <h3 class="sub-label">Research interests</h3>
+          <p>Each links to the work behind it.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int reveal">
+            <span class="int-n">01</span>
+            <h4>Traffic Operations</h4>
+            <p>How vehicles follow and share road space in non-lane-based traffic, and what speed rules actually change.</p>
+            <div class="int-links"><a href="#thesis">Thesis</a><a href="#trb-paper">TRBAM 2027 paper</a><a href="#tra-paper">TRA manuscript</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">02</span>
+            <h4>Travel Behavior &amp; Safety</h4>
+            <p>Why people choose the modes and trip chains they do, and how behavior on the road turns into exposure to short, risky headways.</p>
+            <div class="int-links"><a href="#intermodal">TBS paper</a><a href="#tra-paper">TRA manuscript</a><a href="#p-access">MRT access study</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">03</span>
+            <h4>Active &amp; Public Transportation</h4>
+            <p>Walking and rickshaw access to metro rail, station catchments, and the place of paratransit in everyday trips.</p>
+            <div class="int-links"><a href="#p-access">MRT access study</a><a href="#p-catchment">Catchment study</a><a href="#x-dtca">Pedestrian precinct</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">04</span>
+            <h4>Multimodal Integration</h4>
+            <p>How walking, rickshaws, buses and rail join into one trip, and how a new line fits the network around it.</p>
+            <div class="int-links"><a href="#intermodal">TBS paper</a><a href="#x-ra">Monorail study</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">05</span>
+            <h4>Modeling, Simulation &amp; Optimization</h4>
+            <p>Travel demand models, microsimulation, survival and choice models, and allocation methods for transport problems.</p>
+            <div class="int-links"><a href="#x-ra">TransCAD</a><a href="#x-dtca">PTV Vissim</a><a href="#trb-paper">AFT models</a><a href="#p-python">Allocation tool</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">06</span>
+            <h4>Climate Change &amp; Resilient Transportation</h4>
+            <p>Streets and networks that keep working under waterlogging, flooding and other hazards.</p>
+            <div class="int-links"><a href="#p-hydro">HydroSculpt</a><a href="#p-quake">Ward 53 risk study</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">07</span>
+            <h4>Intelligent Transportation Systems</h4>
+            <p>Computer vision that turns traffic video into data for operations and policy.</p>
+            <div class="int-links"><a href="#trb-paper">YOLO + BoT-SORT pipeline</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">08</span>
+            <h4>Emerging Technologies &amp; Modes</h4>
+            <p>Electrified paratransit and new vehicles entering old streets, and how regulation can respond to them fairly.</p>
+            <div class="int-links"><a href="#tra-paper">TRA manuscript</a><a href="#thesis">Thesis</a></div>
+          </div>
+          <div class="int reveal">
+            <span class="int-n">09</span>
+            <h4>GIS &amp; Remote Sensing</h4>
+            <p>Spatial analysis of access, walking catchments, road networks and land-use change.</p>
+            <div class="int-links"><a href="#p-rural">Rural roads study</a><a href="#p-catchment">Catchment study</a></div>
           </div>
         </div>
       </div>
@@ -163,7 +201,7 @@
         <p>Bachelor's thesis, two papers from it, and one independent paper.</p>
       </header>
 
-      <article class="thesis reveal">
+      <article class="thesis reveal" id="thesis">
         <div class="thesis-main">
           <span class="dotlabel" style="--d:var(--blue)"><span class="dot"></span>Bachelor's thesis · 2025-2026</span>
           <h3>Flow Characteristics of Traditional Rickshaws and Battery-Operated Three-Wheelers in Non-Lane-Based Heterogeneous Traffic of Dhaka</h3>
@@ -185,7 +223,7 @@
       <p class="branch reveal" aria-hidden="true"><span>Papers from the thesis</span></p>
 
       <div class="paper-grid">
-        <article class="card reveal" style="--d:var(--amber)">
+        <article class="card reveal" id="trb-paper" style="--d:var(--amber)">
           <span class="pill"><span class="dot"></span>Accepted · TRBAM 2027</span>
           <h3>Pair-Specific Time Headway Distributions and Covariate-Conditioned AFT Models for Pedal Rickshaws and Battery Operated Three Wheelers in Dhaka's Non-Lane-Based Heterogeneous Traffic</h3>
           <p class="by">First author · Transportation Research Board (TRB) Annual Meeting 2027</p>
@@ -199,7 +237,7 @@
           </div>
         </article>
 
-        <article class="card reveal" style="--d:var(--blue)">
+        <article class="card reveal" id="tra-paper" style="--d:var(--blue)">
           <span class="pill"><span class="dot"></span>Submission-ready · <em>Transportation Research Part A</em></span>
           <h3>Following Behavior and Regulation: Pedal and Battery-Operated Three-Wheelers in Non-Lane-Based Traffic</h3>
           <p class="by">First author · with Dr. Md Asif Raihan and Dr. Md. Musleh Uddin Hasan</p>
@@ -250,7 +288,7 @@
         <div class="e-main" id="professional-experience">
           <h3 class="sub-label reveal">Professional experience</h3>
           <ol class="timeline">
-            <li class="t-item reveal is-now">
+            <li class="t-item reveal is-now" id="x-ra">
               <div class="t-meta"><b>Oct 2026 - Present</b>Dhaka, Bangladesh</div>
               <div class="t-body">
                 <h4>Research Assistant (Transportation Modeler)</h4>
@@ -262,7 +300,7 @@
               </div>
             </li>
 
-            <li class="t-item reveal">
+            <li class="t-item reveal" id="x-sheltech">
               <div class="t-meta"><b>Jul 2026 - Sep 2026</b>Dhaka, Bangladesh</div>
               <div class="t-body">
                 <h4>Assistant Urban Planner</h4>
@@ -274,7 +312,7 @@
               </div>
             </li>
 
-            <li class="t-item reveal">
+            <li class="t-item reveal" id="x-dtca">
               <div class="t-meta"><b>Nov - Dec 2025</b>Dhaka, Bangladesh</div>
               <div class="t-body">
                 <h4>Student Intern</h4>
@@ -337,7 +375,7 @@
 
       <div class="pgrid" id="pgrid">
 
-        <article class="pcard reveal" data-cat="Transport">
+        <article class="pcard reveal" id="p-rural" data-cat="Transport">
           <button class="pmedia" type="button" data-gallery="g1" aria-label="Browse 2 figures: Rural road networks project">
             <img src="assets/img/projects/rural-2.jpg" alt="Service and serving-population coverage maps for Chhagalnaiya Upazila" loading="lazy">
             <span class="pcount">2 figures</span>
@@ -354,7 +392,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Planning &amp; Design">
+        <article class="pcard reveal" id="p-quake" data-cat="Planning &amp; Design">
           <button class="pmedia" type="button" data-gallery="g2" aria-label="Browse 3 figures: Ward 53 earthquake risk project">
             <img src="assets/img/projects/quake-1.jpg" alt="Study area map of Ward 53, Dhaka South City Corporation" loading="lazy">
             <span class="pcount">3 figures</span>
@@ -372,7 +410,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Transport">
+        <article class="pcard reveal" id="p-access" data-cat="Transport">
           <button class="pmedia" type="button" data-gallery="g3" aria-label="Browse 4 figures: Metro rail access mode choice project">
             <img src="assets/img/projects/plan204-1.jpg" alt="Overall access mode choice of MRT passengers" loading="lazy">
             <span class="pcount">4 figures</span>
@@ -391,7 +429,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Transport">
+        <article class="pcard reveal" id="p-catchment" data-cat="Transport">
           <button class="pmedia" type="button" data-gallery="g4" aria-label="Browse 2 figures: Pedestrian catchment project">
             <img src="assets/img/projects/pedestrian-2.jpg" alt="Walking catchment rings around an MRT station in Dhaka" loading="lazy">
             <span class="pcount">2 figures</span>
@@ -408,7 +446,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Planning &amp; Design">
+        <article class="pcard reveal" id="p-hydro" data-cat="Planning &amp; Design">
           <button class="pmedia" type="button" data-gallery="g5" aria-label="Browse 3 figures: HydroSculpt landscape project">
             <img src="assets/img/projects/hydro-2.jpg" alt="Land use scenarios for the study area in 2030, 2045 and 2100" loading="lazy">
             <span class="pcount">3 figures</span>
@@ -426,7 +464,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Planning &amp; Design">
+        <article class="pcard reveal" id="p-heritage" data-cat="Planning &amp; Design">
           <button class="pmedia" type="button" data-gallery="g6" aria-label="Browse 3 figures: Old Dhaka heritage project">
             <img src="assets/img/projects/heritage-1.jpg" alt="Design proposal for Choto Katara, Old Dhaka" loading="lazy">
             <span class="pcount">3 figures</span>
@@ -444,7 +482,7 @@
           </ul>
         </article>
 
-        <article class="pcard reveal" data-cat="Methods">
+        <article class="pcard reveal" id="p-python" data-cat="Methods">
           <button class="pmedia" type="button" data-gallery="g7" aria-label="Browse 4 figures: Resource allocation Python project">
             <img src="assets/img/projects/python-1.jpg" alt="Allocation matrix produced by the North-West Corner method" loading="lazy">
             <span class="pcount">4 figures</span>

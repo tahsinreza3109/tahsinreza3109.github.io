@@ -161,6 +161,15 @@
     });
   });
 
+  // a link to a project hidden by the filter resets the filter first
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#p-"]') : null;
+    if (!a) return;
+    var card = document.getElementById(a.getAttribute('href').slice(1));
+    var all = document.querySelector('.fchip[data-filter="All"]');
+    if (card && card.hidden && all) { all.click(); card.hidden = false; card.classList.remove('is-out'); }
+  });
+
   /* ---------- Figure lightbox ---------- */
   var box = document.getElementById('lightbox');
   if (box && typeof box.showModal === 'function') {
